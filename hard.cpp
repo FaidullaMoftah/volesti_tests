@@ -1,4 +1,4 @@
-#include "Eigen/Dense"
+#include "eigen-3.4.0/Eigen/Dense"
 #include "utility"
 #include <iostream>
 #include <string>
@@ -150,3 +150,28 @@ public:
     }
 
 };
+int main() {
+    MT A(3, 5);
+    A << 4.0,  7.0, 1, 0, 0,
+         0.3,  1.0, 0, 1, 0,
+         1.0, -1.0, 0, 0, 1;
+    
+    VT b(3);
+    b << 100.0,
+         8.0,
+         9.0;
+    
+    VT c(5);
+    c << -1.0,
+         -1.0,
+          0,
+          0,
+          0;
+    
+    IP ret(A, b, c, 15, 1e-12);
+    ret.solve();
+    debug(ret.c.dot(ret.x));
+    debug(ret.x);;
+    debug(ret.mu);
+    return 0;
+}
