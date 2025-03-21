@@ -21,8 +21,7 @@ st          Ax = b, x > 0
 (Add slack for inequalities, and multiply by -1 if the program wants to maximize).
 It also assumes A has full row rank.
 
-Can get arbitrarily close to the optimizer for most problems; keep in mind that
-exact solutions typically require more care.
+Can get arbitrarily close to the optimizer for most problems.
 */
 class IP {
 public:
