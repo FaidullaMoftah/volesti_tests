@@ -3,7 +3,7 @@ library(plotly)
 library(volesti)
 cube = gen_cube(dimension = 3, representation = "V")
 
-type = c('RDHR', 'CRDHR')[test]
+type = c('RDHR', 'BRDHR')[test]
 v = as.data.frame(attr(cube, "V"))
 fig = plot_ly(
   x = v[, 1], y = v[, 2], z = v[, 3],
